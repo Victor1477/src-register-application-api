@@ -19,7 +19,7 @@ public class SecurityConfiguration {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST, "/login").permitAll()
-                        .requestMatchers("/contacts").hasRole("ADMIN"))
+                        .requestMatchers("/contacts").hasRole("USER"))
                 .build();
     }
 }

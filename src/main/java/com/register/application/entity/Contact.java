@@ -1,5 +1,6 @@
 package com.register.application.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -21,9 +22,10 @@ public class Contact {
     private String linkInstagram;
     @Column
     private Date dataNascimento;
-
-    public Contact() {
-    }
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Integer getId() {
         return id;
@@ -71,5 +73,13 @@ public class Contact {
 
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
