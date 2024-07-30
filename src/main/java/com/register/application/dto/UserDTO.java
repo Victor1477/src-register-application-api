@@ -1,4 +1,6 @@
 package com.register.application.dto;
 
-public record UserDTO(String username, String password) {
+import com.register.application.models.Role;
+
+public record UserDTO(String username, String password, Role role) {
 }

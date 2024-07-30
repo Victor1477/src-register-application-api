@@ -26,6 +26,19 @@ public class TokenService {
                 .sign(algorithm);
     }
 
+    public String validateToken(String token) {
+        Algorithm algorithm = Algorithm.HMAC256(secret);
+        try {
+            return JWT.require(algorithm)
+                    .withIssuer("register-application-api")
+                    .build()
+                    .verify(token)
+                    .getSubject();
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
     public Instant generateExpirationDate() {
         return LocalDateTime.now(ZoneId.of("America/Sao_Paulo")).plusHours(1).toInstant(ZoneOffset.of("-03:00"));
     }
