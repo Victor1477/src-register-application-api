@@ -1,7 +1,7 @@
-package com.register.application.dao;
+package com.register.application.core.dao;
 
-import com.register.application.entity.Contact;
-import com.register.application.entity.User;
+import com.register.application.core.entity.Contact;
+import com.register.application.security.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

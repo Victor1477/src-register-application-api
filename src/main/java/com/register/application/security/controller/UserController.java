@@ -1,9 +1,9 @@
-package com.register.application.controller;
+package com.register.application.security.controller;
 
-import com.register.application.dto.ErrorResponseDTO;
-import com.register.application.dto.UserDTO;
-import com.register.application.exception.UserAlreadyExistsException;
-import com.register.application.service.UserService;
+import com.register.application.core.dto.ErrorResponseDTO;
+import com.register.application.security.service.UserService;
+import com.register.application.core.dto.UserDTO;
+import com.register.application.security.exception.UserAlreadyExistsException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

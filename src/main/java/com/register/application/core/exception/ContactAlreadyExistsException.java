@@ -1,4 +1,4 @@
-package com.register.application.exception;
+package com.register.application.core.exception;
 
 public class ContactAlreadyExistsException extends RuntimeException {
 }

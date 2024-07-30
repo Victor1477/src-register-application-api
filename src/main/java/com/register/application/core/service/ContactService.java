@@ -1,9 +1,10 @@
-package com.register.application.service;
+package com.register.application.core.service;
 
-import com.register.application.entity.Contact;
-import com.register.application.dao.ContactDAO;
-import com.register.application.exception.ContactAlreadyExistsException;
-import com.register.application.exception.ContactNotFoundException;
+import com.register.application.core.entity.Contact;
+import com.register.application.core.dao.ContactDAO;
+import com.register.application.core.exception.ContactAlreadyExistsException;
+import com.register.application.core.exception.ContactNotFoundException;
+import com.register.application.security.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

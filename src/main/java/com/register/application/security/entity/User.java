@@ -1,7 +1,8 @@
-package com.register.application.entity;
+package com.register.application.security.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.register.application.models.Role;
+import com.register.application.core.entity.Contact;
+import com.register.application.security.models.Role;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

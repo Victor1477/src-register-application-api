@@ -1,10 +1,10 @@
-package com.register.application.controller;
+package com.register.application.security.controller;
 
-import com.register.application.dto.ErrorResponseDTO;
-import com.register.application.dto.TokenResponseDTO;
-import com.register.application.dto.UserDTO;
-import com.register.application.entity.User;
-import com.register.application.service.TokenService;
+import com.register.application.core.dto.ErrorResponseDTO;
+import com.register.application.core.dto.TokenResponseDTO;
+import com.register.application.core.dto.UserDTO;
+import com.register.application.security.entity.User;
+import com.register.application.security.service.TokenService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

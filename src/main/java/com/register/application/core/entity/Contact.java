@@ -1,6 +1,7 @@
-package com.register.application.entity;
+package com.register.application.core.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.register.application.security.entity.User;
 import jakarta.persistence.*;
 
 import java.util.Date;

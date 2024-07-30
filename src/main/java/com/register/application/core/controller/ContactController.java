@@ -1,10 +1,10 @@
-package com.register.application.controller;
+package com.register.application.core.controller;
 
-import com.register.application.dto.ErrorResponseDTO;
-import com.register.application.entity.Contact;
-import com.register.application.exception.ContactAlreadyExistsException;
-import com.register.application.exception.ContactNotFoundException;
-import com.register.application.service.ContactService;
+import com.register.application.core.dto.ErrorResponseDTO;
+import com.register.application.core.entity.Contact;
+import com.register.application.core.service.ContactService;
+import com.register.application.core.exception.ContactAlreadyExistsException;
+import com.register.application.core.exception.ContactNotFoundException;
 import jakarta.annotation.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

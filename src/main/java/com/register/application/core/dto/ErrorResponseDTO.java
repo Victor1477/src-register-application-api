@@ -1,4 +1,4 @@
-package com.register.application.dto;
+package com.register.application.core.dto;
 
 import java.time.LocalDateTime;
 

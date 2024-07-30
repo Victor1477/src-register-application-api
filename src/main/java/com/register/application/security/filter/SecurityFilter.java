@@ -1,7 +1,7 @@
-package com.register.application.security;
+package com.register.application.security.filter;
 
-import com.register.application.dao.UserDAO;
-import com.register.application.service.TokenService;
+import com.register.application.security.dao.UserDAO;
+import com.register.application.security.service.TokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
