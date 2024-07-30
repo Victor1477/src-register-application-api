@@ -1,8 +1,8 @@
 package com.register.application.security.controller;
 
 import com.register.application.core.dto.ErrorResponseDTO;
-import com.register.application.core.dto.TokenResponseDTO;
-import com.register.application.core.dto.UserDTO;
+import com.register.application.security.dto.TokenResponseDTO;
+import com.register.application.security.dto.UserDTO;
 import com.register.application.security.entity.User;
 import com.register.application.security.service.TokenService;
 import org.springframework.http.ResponseEntity;

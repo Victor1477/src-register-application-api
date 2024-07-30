@@ -1,4 +1,4 @@
-package com.register.application.core.dto;
+package com.register.application.security.dto;
 
 import com.register.application.security.models.Role;
 

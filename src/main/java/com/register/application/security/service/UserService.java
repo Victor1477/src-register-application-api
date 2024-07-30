@@ -2,7 +2,7 @@ package com.register.application.security.service;
 
 import com.register.application.security.entity.User;
 import com.register.application.security.dao.UserDAO;
-import com.register.application.core.dto.UserDTO;
+import com.register.application.security.dto.UserDTO;
 
 import com.register.application.security.exception.UserAlreadyExistsException;
 import org.springframework.security.core.context.SecurityContextHolder;
