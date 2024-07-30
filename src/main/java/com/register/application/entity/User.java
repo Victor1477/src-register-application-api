@@ -1,5 +1,6 @@
 package com.register.application.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.register.application.models.Role;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,7 +16,7 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Integer id;
     @Column
     private String username;
     @Column
@@ -23,6 +24,7 @@ public class User implements UserDetails {
     @Column
     @Enumerated(EnumType.STRING)
     private Role role;
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Contact> contacts;
 
@@ -44,11 +46,11 @@ public class User implements UserDetails {
         return this.username;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

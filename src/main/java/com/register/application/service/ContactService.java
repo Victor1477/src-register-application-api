@@ -11,27 +11,31 @@ import java.util.List;
 @Service("contactService")
 public class ContactService {
 
+    private UserService userService;
     private ContactDAO contactDAO;
 
-    public ContactService(ContactDAO contactDAO) {
+    public ContactService(UserService userService, ContactDAO contactDAO) {
+        this.userService = userService;
         this.contactDAO = contactDAO;
     }
 
     public List<Contact> findAll() {
-        return contactDAO.findAll();
+        return contactDAO.findAllByUser(userService.getCurrentUser());
     }
 
     public Contact save(Contact contact) {
-        if (contactDAO.findById(contact.getId()).isPresent()) {
+        if (contactDAO.findByUser(contact.getId(), userService.getCurrentUser()) != null) {
             throw new ContactAlreadyExistsException();
         }
+        contact.setUser(userService.getCurrentUser());
         return contactDAO.save(contact);
     }
 
     public Contact update(Contact contact) {
-        if (contactDAO.findById(contact.getId()).isEmpty()) {
+        if (contactDAO.findByUser(contact.getId(), userService.getCurrentUser()) == null) {
             throw new ContactNotFoundException();
         }
+        contact.setUser(userService.getCurrentUser());
         return contactDAO.save(contact);
     }
 }

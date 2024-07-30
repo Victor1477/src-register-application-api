@@ -5,6 +5,7 @@ import com.register.application.dto.UserDTO;
 
 import com.register.application.entity.User;
 import com.register.application.exception.UserAlreadyExistsException;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -30,6 +31,10 @@ public class UserService implements UserDetailsService {
         user.setPassword(encodePassword(userDTO.password()));
         user.setRole(userDTO.role());
         userDAO.save(user);
+    }
+
+    public User getCurrentUser() {
+        return (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     }
 
     @Override
