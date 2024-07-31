@@ -39,4 +39,12 @@ public class ContactService {
         contact.setUser(userService.getCurrentUser());
         return contactDAO.save(contact);
     }
+
+    public void delete(Integer id) {
+        Contact contact = contactDAO.findByUser(id, userService.getCurrentUser());
+        if (contact == null) {
+            throw new ContactNotFoundException();
+        }
+        contactDAO.delete(contact);
+    }
 }

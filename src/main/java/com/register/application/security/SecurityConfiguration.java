@@ -29,7 +29,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/login").permitAll()
                         .requestMatchers("/users").hasRole("ADMIN")
-                        .requestMatchers("/contacts").hasRole("USER"))
+                        .requestMatchers("/contacts").hasRole("USER")
+                        .requestMatchers("/contacts/*").hasRole("USER"))
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }

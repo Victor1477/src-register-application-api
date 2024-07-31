@@ -47,4 +47,15 @@ public class ContactController {
                     .body(new ErrorResponseDTO(String.format("Contact not found for given id: %s", contact.getId()), LocalDateTime.now()));
         }
     }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity delete(@PathVariable Integer id) {
+        try {
+            contactService.delete(id);
+            return ResponseEntity.ok().build();
+        } catch (ContactNotFoundException e) {
+            return ResponseEntity.status(404)
+                    .body(new ErrorResponseDTO(String.format("Contact not found for given id: %s", id), LocalDateTime.now()));
+        }
+    }
 }
