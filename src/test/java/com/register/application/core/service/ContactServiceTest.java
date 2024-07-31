@@ -65,4 +65,13 @@ class ContactServiceTest {
             contactService.update(contact);
         });
     }
+
+    @Test
+    public void shouldNotDeleteWhenContactIsNotFound() {
+        when(contactDAO.findByUser(eq(10), any())).thenReturn(null);
+
+        assertThrows(ContactNotFoundException.class, () -> {
+            contactService.delete(10);
+        });
+    }
 }
